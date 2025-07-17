@@ -16,9 +16,9 @@ const HomeContainer = () => {
       {/* Header section */}
       <section className={styles.heroSection}>
         <img src="./images/Velmia-horizontal.png" alt="Company Logo" className={styles.logo} />
-        <h1 className={styles.title}>Welcome to Our Global Platform</h1>
+        <h1 className={styles.title}>Velmia – Discover Premium Journals & Notebooks with Easy Purchase Links</h1>
         <p className={styles.description}>
-          Discover innovative solutions tailored for clients worldwide. We provide fast delivery, premium customer support, and cutting-edge technologies to elevate your business.
+          Welcome to Velmia.shop! Explore a curated collection of high-quality journals and notebooks. Find your perfect product with direct, easy purchase links and enjoy fast shipping worldwide.
         </p>
       </section>
 
