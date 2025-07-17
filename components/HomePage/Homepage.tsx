@@ -3,7 +3,7 @@
 import { useState } from "react";
 import allCards from "@/dumy/data"; // Adjust the import path as necessary
 import styles from "../HomePage/Homepage.module.css";
-import Image from "next/image";
+
 
 const HomeContainer = () => {
   const [visibleCount, setVisibleCount] = useState(6);
@@ -33,7 +33,7 @@ const HomeContainer = () => {
             className={styles.cardLink}
           >
             <article className={styles.card} tabIndex={0}>
-              <Image src={card.imageUrl} alt={card.alt} className={styles.cardImage} />
+              <img src={card.imageUrl} alt={card.alt} className={styles.cardImage} />
               <h2 className={styles.cardTitle}>{card.title}</h2>
             </article>
           </a>

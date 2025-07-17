@@ -1,12 +1,11 @@
 import styles from "./Footer.module.css";
-import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.brand}>
-          <Image
+          <img
             src="/images/Velmia-horizontal.png"
             alt="Velmia Logo"
             className={styles.logo}

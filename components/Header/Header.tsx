@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import styles from "./Header.module.css";
-import Image from "next/image";
+
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <Image
+          <img
             style={{ width: "100px", height: "auto" }}
             src="/images/Velmia-horizontal.png"
             alt="Velmia Logo"
