@@ -9,8 +9,8 @@ export default function AboutSection() {
         <h1 className={styles.title}>About Velmia</h1>
         <p className={styles.text}>
           Velmia is your trusted source for curated design, thoughtful content,
-          and impactful digital experiences. Our mission is to blend creativity
-          with functionality to craft platforms that truly resonate with users.
+          and impactful digital experiences. It&apos;s mission is to blend
+          creativity with functionality.
         </p>
         <p className={styles.text}>
           Built with care, driven by passion, and designed with the user in mind
