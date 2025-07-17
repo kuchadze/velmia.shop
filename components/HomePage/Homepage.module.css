@@ -1,0 +1,123 @@
+.heroSection {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+.logo {
+  width: 100%;
+  /* height: 128px; */
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  color: #000; /* Dark Olive */
+}
+
+.description {
+  color: #000;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 32px;
+}
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: #EFECE4;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: 0 6px 18px rgba(98, 102, 75, 0.4);
+  outline: none;
+  transform: translateY(-3px) scale(1.015);
+}
+
+
+.cardImage {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 2px solid #62664B;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000;
+
+  height: 3.6em; /* საკმარისი სივრცე 2 ხაზისთვის */
+  line-height: 1.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 👈 ზუსტად 2 ხაზი */
+  -webkit-box-orient: vertical;
+}
+
+.cardDescription {
+  color: #62664B;
+  font-size: 1.125rem;
+}
+
+.showMoreButton {
+  background-color: #62664B;
+  color: #BBC2B6;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.showMoreButton:hover,
+.showMoreButton:focus {
+  background-color: #EFECE4; /* კრემისფერი */
+  color: #62664B;
+  outline: none;
+}
