@@ -24,7 +24,7 @@ const HomeContainer = () => {
 
       {/* Cards section */}
       <section className={styles.cardsGrid} aria-label="Our services and features">
-        {allCards.slice(0, visibleCount).map((card) => (
+        {[...allCards].reverse().slice(0, visibleCount).map((card) => (
           <a
             key={card.id}
             href={card.link}

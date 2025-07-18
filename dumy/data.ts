@@ -51,6 +51,13 @@ const allCards: CardData[] = [
     alt: "Fun & Friendly Coloring Book",
     link: "https://www.amazon.com/dp/B0FHQTQJY1",
   },
+   {
+    id: 7,
+    title: "Monthly Planner: Boost Focus, Manage Time & Get Things Done",
+    imageUrl: "../images/Monthly-planner.png",
+    alt: "Monthly Planner",
+    link: "https://www.amazon.com/dp/B0FHZJ6ZZZ",
+  },
   // სხვა ბარათები...
 ];
 
