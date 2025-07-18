@@ -18,6 +18,7 @@ export default function HomePage() {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <meta name="p:domain_verify" content="66cea5ae5e9b52c325a007d740799c71"/>
         <meta
           name="keywords"
           content="global services, innovative solutions, fast delivery, premium customer service, landing page"
