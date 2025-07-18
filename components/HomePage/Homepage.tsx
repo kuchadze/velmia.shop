@@ -4,7 +4,6 @@ import { useState } from "react";
 import allCards from "@/dumy/data"; // Adjust the import path as necessary
 import styles from "../HomePage/Homepage.module.css";
 
-
 const HomeContainer = () => {
   const [visibleCount, setVisibleCount] = useState(6);
 
@@ -16,28 +15,43 @@ const HomeContainer = () => {
     <>
       {/* Header section */}
       <section className={styles.heroSection}>
-        <h1 className={styles.title}>Velmia – Discover Premium Journals & Notebooks with Easy Purchase Links</h1>
+        <h1 className={styles.title}>
+          Velmia – Discover Premium Journals & Notebooks with Easy Purchase
+          Links
+        </h1>
         <p className={styles.description}>
-          Welcome to Velmia.shop! Explore a curated collection of high-quality journals and notebooks. Find your perfect product with direct, easy purchase links and enjoy fast shipping worldwide.
+          Welcome to Velmia.shop! Explore a curated collection of high-quality
+          journals and notebooks. Find your perfect product with direct, easy
+          purchase links and enjoy fast shipping worldwide.
         </p>
       </section>
 
       {/* Cards section */}
-      <section className={styles.cardsGrid} aria-label="Our services and features">
-        {[...allCards].reverse().slice(0, visibleCount).map((card) => (
-          <a
-            key={card.id}
-            href={card.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.cardLink}
-          >
-            <article className={styles.card} tabIndex={0}>
-              <img src={card.imageUrl} alt={card.alt} className={styles.cardImage} />
-              <h2 className={styles.cardTitle}>{card.title}</h2>
-            </article>
-          </a>
-        ))}
+      <section
+        className={styles.cardsGrid}
+        aria-label="Our services and features"
+      >
+        {[...allCards]
+          .reverse()
+          .slice(0, visibleCount)
+          .map((card) => (
+            <a
+              key={card.id}
+              href={card.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.cardLink}
+            >
+              <article className={styles.card} tabIndex={0}>
+                <img
+                  src={card.imageUrl}
+                  alt={card.alt}
+                  className={styles.cardImage}
+                />
+                <h2 className={styles.cardTitle}>{card.title}</h2>
+              </article>
+            </a>
+          ))}
       </section>
 
       {/* Show More button */}
