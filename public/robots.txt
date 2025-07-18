@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://velmia.shop
+
+# Sitemaps
+Sitemap: https://velmia.shop/sitemap.xml
