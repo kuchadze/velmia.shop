@@ -12,8 +12,7 @@ const Footer = () => {
           />
           <div className={styles.taglineContainer}>
             <p className={styles.tagline}>
-              Velmia – Curated Premium Journals & Notebooks with Easy Purchase
-              Links
+              Velmia – Curated Premium Journals & Notebooks with Easy Purchase Links
             </p>
           </div>
         </div>
@@ -63,7 +62,27 @@ const Footer = () => {
             <span>LinkedIn</span>
           </a>
 
-          {/* შეგიძლია დაამატო სხვა სოციალური ქსელებიც აქ */}
+          {/* Pinterest */}
+          <a
+            href="https://www.pinterest.com/velmiashop/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Pinterest"
+            className={styles.socialLink}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#E60023"
+              viewBox="0 0 24 24"
+              width="24px"
+              height="24px"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 5.022 3.135 9.304 7.594 11.01-.105-.935-.2-2.371.042-3.393.218-.922 1.404-5.875 1.404-5.875s-.358-.715-.358-1.771c0-1.659.962-2.9 2.161-2.9 1.019 0 1.51.764 1.51 1.68 0 1.023-.654 2.552-.99 3.973-.281 1.193.596 2.165 1.767 2.165 2.121 0 3.758-2.237 3.758-5.447 0-2.837-2.041-4.819-4.955-4.819-3.376 0-5.356 2.523-5.356 5.137 0 1.022.393 2.12.884 2.716a.357.357 0 01.082.345c-.09.379-.293 1.193-.333 1.36-.053.214-.172.26-.399.157-1.485-.688-2.412-2.858-2.412-4.604 0-3.749 2.724-7.193 7.862-7.193 4.121 0 7.321 2.942 7.321 6.872 0 4.109-2.59 7.423-6.195 7.423-1.209 0-2.345-.628-2.733-1.37l-.742 2.825c-.269 1.035-1 2.33-1.49 3.117 1.124.349 2.312.539 3.548.539 6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+            </svg>
+            <span>Pinterest</span>
+          </a>
         </nav>
 
         <p className={styles.copy}>
