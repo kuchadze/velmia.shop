@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import allCards from "@/dumy/data"; // Adjust the import path as necessary
+import allCards from "@/dumy/data"; // Ensure alt/title included in data
 import styles from "../HomePage/Homepage.module.css";
 
 const HomeContainer = () => {
@@ -13,23 +13,23 @@ const HomeContainer = () => {
 
   return (
     <>
-      {/* Header section */}
+      {/* Hero Section */}
       <section className={styles.heroSection}>
         <h1 className={styles.title}>
-          Velmia – Discover Premium Journals & Notebooks with Easy Purchase
-          Links
+          Velmia – Premium Handmade Notebooks & Journals | Shop Online Worldwide
         </h1>
         <p className={styles.description}>
-          Welcome to Velmia.shop! Explore a curated collection of high-quality
-          journals and notebooks. Find your perfect product with direct, easy
-          purchase links and enjoy fast shipping worldwide.
+          Welcome to Velmia.shop — your destination for premium handmade
+          notebooks and journals. Discover unique designs crafted with care,
+          ideal for writing, gifting, or organizing your ideas. Shop online with
+          secure checkout and fast international shipping.
         </p>
       </section>
 
-      {/* Cards section */}
+      {/* Cards Section */}
       <section
         className={styles.cardsGrid}
-        aria-label="Our services and features"
+        aria-label="Our handmade notebook collection"
       >
         {[...allCards]
           .reverse()
@@ -54,12 +54,12 @@ const HomeContainer = () => {
           ))}
       </section>
 
-      {/* Show More button */}
+      {/* Show More Button */}
       {visibleCount < allCards.length && (
         <button
           onClick={handleShowMore}
           className={styles.showMoreButton}
-          aria-label="Show more cards"
+          aria-label="Show more notebooks"
         >
           Show More
         </button>
