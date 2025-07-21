@@ -6,7 +6,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.brand}>
           <img
-            src="/images/Velmia-horizontal.png"
+            src="/images/Velmia-horizontal.webp"
             alt="Velmia Logo"
             className={styles.logo}
           />
