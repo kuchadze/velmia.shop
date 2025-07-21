@@ -11,7 +11,7 @@ export default function Header() {
         <Link href="/" className={styles.logo}>
           <img
             style={{ width: "100px", height: "auto" }}
-            src="/images/Velmia-horizontal.png"
+            src="/images/Velmia-horizontal.webp"
             alt="Velmia Logo"
             className={styles.logoImage}
           />
