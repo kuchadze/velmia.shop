@@ -58,6 +58,27 @@ const allCards: CardData[] = [
     alt: "Monthly Planner",
     link: "https://www.amazon.com/dp/B0FHZJ6ZZZ",
   },
+  {
+    id: 8,
+    title: "ALWAYS BELIVE THAT SOMETHING WONDERFUL IS ABOUT TO HAPPEN: Mindset Transformation Journal: Embrace Joy, Attract Abundance, and Trust the Journey Ahead",
+    imageUrl: "../images/always-belive-blue.png",
+    alt: "Always Believe That Something Wonderful Is About to Happen",
+    link: "https://www.amazon.com/dp/B0FJ6WMLHR",
+  },
+  {
+    id: 9,
+    title: "ALWAYS BELIVE THAT SOMETHING WONDERFUL IS ABOUT TO HAPPEN.: A Guided Journal for Cultivating Optimism, Achieving Goals, and Embracing a Positive Future",
+    imageUrl: "../images/always-belive-gold.png",
+    alt: "Always Believe That Something Wonderful Is About to Happen",
+    link: "https://www.amazon.com/dp/B0FJ7DJ5PT",
+  },
+  {
+    id: 10,
+    title: "ALWAYS BELIVE THAT SOMETHING WONDERFUL IS ABOUT TO HAPPEN.: Daily Prompts and Affirmations for Manifesting Your Dreams and Believing in Wonderful Possibilities",
+    imageUrl: "../images/always-belive-grey.png",
+    alt: "Always Believe That Something Wonderful Is About to Happen",
+    link: "https://www.amazon.com/dp/B0FJ6Y6MCZ",
+  },
   // სხვა ბარათები...
 ];
 
