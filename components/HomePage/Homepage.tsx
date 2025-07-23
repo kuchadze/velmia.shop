@@ -52,9 +52,9 @@ const HomeContainer = () => {
         aria-label="Our handmade notebook collection"
       >
         {[...allCards]
-          .reverse()
-          .slice(0, visibleCount)
-          .map((card) => (
+  .sort((a, b) => b.id - a.id) // 👈 უკუღმა დალაგება: id დიდიდან პატარასკენ
+  .slice(0, visibleCount)
+  .map((card) =>  (
             <a
               key={card.id}
               href={card.link}
