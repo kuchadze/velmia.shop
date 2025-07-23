@@ -14,16 +14,18 @@ type Card = {
 const HomeContainer = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [allCards, setAllCards] = useState<Card[]>([]);
-  console.log("All cards:", allCards);
+  const [loading, setLoading] = useState(true); // 👈 პრელოუდერის სთეითი
   
-
-  // მონაცემების ფეტჩი
   useEffect(() => {
     fetch("https://velmia-shop-back.onrender.com/images")
       .then((res) => res.json())
-      .then((data) => setAllCards(data))
+      .then((data) => {
+        setAllCards(data);
+        setLoading(false); // ✔️ დასრულებისას false
+      })
       .catch((err) => {
         console.error("Failed to fetch images:", err);
+        setLoading(false); // ❌ შეცდომის შემთხვევაშიც false
       });
   }, []);
 
@@ -46,43 +48,52 @@ const HomeContainer = () => {
         </p>
       </section>
 
-      {/* Cards Section */}
-      <section
-        className={styles.cardsGrid}
-        aria-label="Our handmade notebook collection"
-      >
-        {[...allCards]
-  .sort((a, b) => b.id - a.id) // 👈 უკუღმა დალაგება: id დიდიდან პატარასკენ
-  .slice(0, visibleCount)
-  .map((card) =>  (
-            <a
-              key={card.id}
-              href={card.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.cardLink}
-            >
-              <article className={styles.card} tabIndex={0}>
-                <img
-                  src={card.image}
-                  alt={card.alt}
-                  className={styles.cardImage}
-                />
-                <h2 className={styles.cardTitle}>{card.title}</h2>
-              </article>
-            </a>
-          ))}
-      </section>
+      {/* Loading Spinner */}
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <div className={styles.loader}></div>
+        </div>
+      ) : (
+        <>
+          {/* Cards Section */}
+          <section
+            className={styles.cardsGrid}
+            aria-label="Our handmade notebook collection"
+          >
+            {[...allCards]
+              .sort((a, b) => b.id - a.id)
+              .slice(0, visibleCount)
+              .map((card) => (
+                <a
+                  key={card.id}
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.cardLink}
+                >
+                  <article className={styles.card} tabIndex={0}>
+                    <img
+                      src={card.image}
+                      alt={card.alt}
+                      className={styles.cardImage}
+                    />
+                    <h2 className={styles.cardTitle}>{card.title}</h2>
+                  </article>
+                </a>
+              ))}
+          </section>
 
-      {/* Show More Button */}
-      {visibleCount < allCards.length && (
-        <button
-          onClick={handleShowMore}
-          className={styles.showMoreButton}
-          aria-label="Show more notebooks"
-        >
-          Show More
-        </button>
+          {/* Show More Button */}
+          {visibleCount < allCards.length && (
+            <button
+              onClick={handleShowMore}
+              className={styles.showMoreButton}
+              aria-label="Show more notebooks"
+            >
+              Show More
+            </button>
+          )}
+        </>
       )}
     </>
   );
