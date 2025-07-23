@@ -1,11 +1,31 @@
 "use client";
 
-import { useState } from "react";
-import allCards from "@/dumy/data"; // Ensure alt/title included in data
+import { useEffect, useState } from "react";
 import styles from "../HomePage/Homepage.module.css";
+
+type Card = {
+  id: number;
+  title: string;
+  image: string;
+  alt: string;
+  link: string;
+};
 
 const HomeContainer = () => {
   const [visibleCount, setVisibleCount] = useState(6);
+  const [allCards, setAllCards] = useState<Card[]>([]);
+  console.log("All cards:", allCards);
+  
+
+  // მონაცემების ფეტჩი
+  useEffect(() => {
+    fetch("https://velmia-shop-back.onrender.com/images")
+      .then((res) => res.json())
+      .then((data) => setAllCards(data))
+      .catch((err) => {
+        console.error("Failed to fetch images:", err);
+      });
+  }, []);
 
   const handleShowMore = () => {
     setVisibleCount((prev) => prev + 6);
@@ -44,7 +64,7 @@ const HomeContainer = () => {
             >
               <article className={styles.card} tabIndex={0}>
                 <img
-                  src={card.imageUrl}
+                  src={card.image}
                   alt={card.alt}
                   className={styles.cardImage}
                 />
