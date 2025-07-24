@@ -45,3 +45,28 @@
   margin-bottom: 2rem;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #444;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.socialLink svg {
+  display: block;
+}
+
+.socialLink:hover,
+.socialLink:focus {
+  color: #000;
+}
