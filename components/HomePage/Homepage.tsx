@@ -11,26 +11,46 @@ type Card = {
   link: string;
 };
 
+const categories = [
+  { label: "All Journals", value: "all" },
+  { label: "Notebook", value: "notebook" },
+  { label: "Self Care Journal", value: "selfcare" },
+  { label: "Monthly Planner", value: "monthly-planner" },
+  { label: "Coloring Book", value: "coloring-book" },
+];
+
 const HomeContainer = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [allCards, setAllCards] = useState<Card[]>([]);
-  const [loading, setLoading] = useState(true); // 👈 პრელოუდერის სთეითი
-  
+  const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
   useEffect(() => {
-    fetch("https://velmia-shop-back.onrender.com/images")
+    setLoading(true);
+    const endpoint =
+      selectedCategory === "all"
+        ? "https://velmia-shop-back.onrender.com/images"
+        : `https://velmia-shop-back.onrender.com/images/${selectedCategory}`;
+
+    fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
         setAllCards(data);
-        setLoading(false); // ✔️ დასრულებისას false
+        setVisibleCount(6); // Reset visible count on filter change
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Failed to fetch images:", err);
-        setLoading(false); // ❌ შეცდომის შემთხვევაშიც false
+        setLoading(false);
       });
-  }, []);
+  }, [selectedCategory]);
 
   const handleShowMore = () => {
     setVisibleCount((prev) => prev + 6);
+  };
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCategory(e.target.value);
   };
 
   return (
@@ -38,14 +58,33 @@ const HomeContainer = () => {
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <h1 className={styles.title}>
-          Velmia – Premium Handmade Notebooks & Journals | Shop Online Worldwide
+          Velmia – Exquisite Handmade Notebooks & Journals Crafted for You
         </h1>
         <p className={styles.description}>
-          Welcome to Velmia.shop — your destination for premium handmade
-          notebooks and journals. Discover unique designs crafted with care,
-          ideal for writing, gifting, or organizing your ideas. Shop online with
-          secure checkout and fast international shipping.
+          Welcome to Velmia.shop — your premier destination for exquisite
+          handmade notebooks and journals. Explore uniquely crafted designs made
+          with passion, perfect for writing, gifting, or organizing your
+          thoughts.
         </p>
+
+        {/* Dropdown */}
+        <div className={styles.filterContainer}>
+          <label htmlFor="categorySelect" className={styles.filterLabel}>
+            Filter by Category:
+          </label>
+          <select
+            id="categorySelect"
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+            className={styles.dropdown}
+          >
+            {categories.map((cat) => (
+              <option key={cat.value} value={cat.value}>
+                {cat.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </section>
 
       {/* Loading Spinner */}
@@ -55,11 +94,8 @@ const HomeContainer = () => {
         </div>
       ) : (
         <>
-          {/* Cards Section */}
-          <section
-            className={styles.cardsGrid}
-            aria-label="Our handmade notebook collection"
-          >
+          {/* Cards */}
+          <section className={styles.cardsGrid}>
             {[...allCards]
               .sort((a, b) => b.id - a.id)
               .slice(0, visibleCount)
@@ -85,11 +121,7 @@ const HomeContainer = () => {
 
           {/* Show More Button */}
           {visibleCount < allCards.length && (
-            <button
-              onClick={handleShowMore}
-              className={styles.showMoreButton}
-              aria-label="Show more notebooks"
-            >
+            <button onClick={handleShowMore} className={styles.showMoreButton}>
               Show More
             </button>
           )}
