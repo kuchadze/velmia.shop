@@ -17,7 +17,18 @@ const categories = [
   { label: "Self Care Journal", value: "selfcare" },
   { label: "Monthly Planner", value: "monthly-planner" },
   { label: "Coloring Book", value: "coloring-book" },
+  { label: "sport journal", value: "sportjournal" },
 ];
+
+// Utility function to shuffle array
+function shuffleArray<T>(array: T[]): T[] {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
 
 const HomeContainer = () => {
   const [visibleCount, setVisibleCount] = useState(6);
@@ -35,7 +46,12 @@ const HomeContainer = () => {
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
-        setAllCards(data);
+        const cardsToDisplay =
+          selectedCategory === "all"
+            ? shuffleArray(data) // shuffle randomly
+            : data.sort((a: Card, b: Card) => b.id - a.id); // sort descending by ID
+
+        setAllCards(cardsToDisplay);
         setVisibleCount(6); // Reset visible count on filter change
         setLoading(false);
       })
@@ -96,27 +112,24 @@ const HomeContainer = () => {
         <>
           {/* Cards */}
           <section className={styles.cardsGrid}>
-            {[...allCards]
-              .sort((a, b) => b.id - a.id)
-              .slice(0, visibleCount)
-              .map((card) => (
-                <a
-                  key={card.id}
-                  href={card.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.cardLink}
-                >
-                  <article className={styles.card} tabIndex={0}>
-                    <img
-                      src={card.image}
-                      alt={card.alt}
-                      className={styles.cardImage}
-                    />
-                    <h2 className={styles.cardTitle}>{card.title}</h2>
-                  </article>
-                </a>
-              ))}
+            {allCards.slice(0, visibleCount).map((card) => (
+              <a
+                key={card.id}
+                href={card.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cardLink}
+              >
+                <article className={styles.card} tabIndex={0}>
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    className={styles.cardImage}
+                  />
+                  <h2 className={styles.cardTitle}>{card.title}</h2>
+                </article>
+              </a>
+            ))}
           </section>
 
           {/* Show More Button */}
