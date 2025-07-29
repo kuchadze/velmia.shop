@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Head from "next/head"; // Only if you're using Next.js
 import styles from "../HomePage/Homepage.module.css";
 
 type Card = {
@@ -17,10 +18,9 @@ const categories = [
   { label: "Self Care Journal", value: "selfcare" },
   { label: "Monthly Planner", value: "monthly-planner" },
   { label: "Coloring Book", value: "coloring-book" },
-  { label: "sport journal", value: "sportjournal" },
+  { label: "Sport Journal", value: "sportjournal" },
 ];
 
-// Utility function to shuffle array
 function shuffleArray<T>(array: T[]): T[] {
   const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
@@ -48,11 +48,11 @@ const HomeContainer = () => {
       .then((data) => {
         const cardsToDisplay =
           selectedCategory === "all"
-            ? shuffleArray(data) // shuffle randomly
-            : data.sort((a: Card, b: Card) => b.id - a.id); // sort descending by ID
+            ? shuffleArray(data)
+            : data.sort((a: Card, b: Card) => b.id - a.id);
 
         setAllCards(cardsToDisplay);
-        setVisibleCount(6); // Reset visible count on filter change
+        setVisibleCount(6);
         setLoading(false);
       })
       .catch((err) => {
@@ -71,19 +71,17 @@ const HomeContainer = () => {
 
   return (
     <>
-      {/* Hero Section */}
       <section className={styles.heroSection}>
         <h1 className={styles.title}>
           Velmia – Exquisite Handmade Notebooks & Journals Crafted for You
         </h1>
         <p className={styles.description}>
-          Welcome to Velmia.shop — your premier destination for exquisite
-          handmade notebooks and journals. Explore uniquely crafted designs made
-          with passion, perfect for writing, gifting, or organizing your
-          thoughts.
+          Welcome to Velmia.shop — your destination for <strong>handmade
+          journals</strong>, <strong>gratitude planners</strong>, and{" "}
+          <strong>aesthetic notebooks</strong> crafted with care. Perfect for
+          writing, planning, self-care, or gifting.
         </p>
 
-        {/* Dropdown */}
         <div className={styles.filterContainer}>
           <label htmlFor="categorySelect" className={styles.filterLabel}>
             Filter by Category:
@@ -103,7 +101,14 @@ const HomeContainer = () => {
         </div>
       </section>
 
-      {/* Loading Spinner */}
+      {/* Section Heading */}
+      <section>
+        <h2 className={styles.subTitle}>
+          Browse Our Exclusive Handmade Journal Collection
+        </h2>
+      </section>
+
+      {/* Loader */}
       {loading ? (
         <div className={styles.loaderContainer}>
           <div className={styles.loader}></div>
@@ -123,10 +128,10 @@ const HomeContainer = () => {
                 <article className={styles.card} tabIndex={0}>
                   <img
                     src={card.image}
-                    alt={card.alt}
+                    alt={`Velmia ${card.title} journal preview`}
                     className={styles.cardImage}
                   />
-                  <h2 className={styles.cardTitle}>{card.title}</h2>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
                 </article>
               </a>
             ))}
@@ -135,7 +140,7 @@ const HomeContainer = () => {
           {/* Show More Button */}
           {visibleCount < allCards.length && (
             <button onClick={handleShowMore} className={styles.showMoreButton}>
-              Show More
+              Show More Journals
             </button>
           )}
         </>
