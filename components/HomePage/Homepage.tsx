@@ -21,6 +21,8 @@ const categories = [
   { label: "Sport Journal", value: "sportjournal" },
   { label: "Travel Journal", value: "traveljournal" },
   { label: "Study Planner", value: "studyplanner" },
+  { label: "Meal Planner", value: "mealplanner" },
+  
 ];
 
 function shuffleArray<T>(array: T[]): T[] {
