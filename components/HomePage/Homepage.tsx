@@ -22,6 +22,7 @@ const categories = [
   { label: "Travel Journal", value: "traveljournal" },
   { label: "Study Planner", value: "studyplanner" },
   { label: "Meal Planner", value: "mealplanner" },
+  { label: "Budget Planner", value: "budgetplanner" },
   
 ];
 
