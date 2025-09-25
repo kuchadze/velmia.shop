@@ -125,8 +125,6 @@ const HomeContainer = () => {
             {allCards.slice(0, visibleCount).map((card) => (
               <div
                 key={card.id}
-                href={card.link}
-                target="_blank"
                 rel="noopener noreferrer"
                 className={styles.cardLink}
               >
