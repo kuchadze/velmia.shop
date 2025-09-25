@@ -194,3 +194,35 @@
   background-color: #e3e0d6;
   outline: none;
 }
+
+
+.buyButton {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #62664B, #62664B);
+  color: #FFF;
+  font-weight: 700;
+  border-radius: 40px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(54, 79, 11, 0.4);
+}
+
+.buyButton:hover {
+  background: linear-gradient(135deg, #62664B, #62664B);
+  transform: translateY(-4px) scale(1.07);
+  box-shadow: 0 8px 20px rgba(56, 76, 15, 0.6);
+}
+
+
+
+@keyframes shine {
+  0% {
+    left: -75px;
+  }
+  100% {
+    left: 120%;
+  }
+}

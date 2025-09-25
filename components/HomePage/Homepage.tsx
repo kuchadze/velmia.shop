@@ -23,7 +23,6 @@ const categories = [
   { label: "Study Planner", value: "studyplanner" },
   { label: "Meal Planner", value: "mealplanner" },
   { label: "Budget Planner", value: "budgetplanner" },
-  
 ];
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -81,8 +80,9 @@ const HomeContainer = () => {
           Velmia – Exquisite Handmade Notebooks & Journals Crafted for You
         </h1>
         <p className={styles.description}>
-          Welcome to Velmia.shop — your destination for <strong>handmade
-          journals</strong>, <strong>gratitude planners</strong>, and{" "}
+          Welcome to Velmia.shop — your destination for{" "}
+          <strong>handmade journals</strong>,{" "}
+          <strong>gratitude planners</strong>, and{" "}
           <strong>aesthetic notebooks</strong> crafted with care. Perfect for
           writing, planning, self-care, or gifting.
         </p>
@@ -123,7 +123,7 @@ const HomeContainer = () => {
           {/* Cards */}
           <section className={styles.cardsGrid}>
             {allCards.slice(0, visibleCount).map((card) => (
-              <a
+              <div
                 key={card.id}
                 href={card.link}
                 target="_blank"
@@ -137,8 +137,15 @@ const HomeContainer = () => {
                     className={styles.cardImage}
                   />
                   <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <a
+                    href={card.link}
+                    target="_blank"
+                    className={styles.buyButton}
+                  >
+                    Buy Now
+                  </a>
                 </article>
-              </a>
+              </div>
             ))}
           </section>
 
