@@ -41,6 +41,8 @@ const HomeContainer = () => {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("all");
 
+  
+
   useEffect(() => {
     setLoading(true);
     const endpoint =
@@ -137,8 +139,13 @@ const HomeContainer = () => {
                   />
                   <h3 className={styles.cardTitle}>{card.title}</h3>
                   <a
-                    href={card.link}
+                    href={
+                      card.link.startsWith("http")
+                        ? card.link
+                        : `https://${card.link}`
+                    }
                     target="_blank"
+                    rel="noopener noreferrer"
                     className={styles.buyButton}
                   >
                     Buy Now
