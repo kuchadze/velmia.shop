@@ -17,6 +17,7 @@ const categories = [
   { label: "Notebook", value: "notebook" },
   { label: "Self Care Journal", value: "selfcare" },
   { label: "Monthly Planner", value: "monthly-planner" },
+  { label: "Self-Care Ebook", value: "ebook-self-care" },
   { label: "Coloring Book", value: "coloring-book" },
   { label: "Sport Journal", value: "sportjournal" },
   { label: "Travel Journal", value: "traveljournal" },
