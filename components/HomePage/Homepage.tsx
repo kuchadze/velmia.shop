@@ -15,6 +15,7 @@ type Card = {
 const categories = [
   { label: "All Journals", value: "all" },
   { label: "Notebook", value: "notebook" },
+  { label: "Christmas Journal", value: "christmas-journal" },
   { label: "Self Care Journal", value: "selfcare" },
   { label: "Monthly Planner", value: "monthly-planner" },
   { label: "Self-Care Ebook", value: "ebook-self-care" },
