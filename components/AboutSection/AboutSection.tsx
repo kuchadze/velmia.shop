@@ -8,29 +8,28 @@ export default function AboutSection() {
       <div className={styles.container}>
         {/* მთავარი სათაური SEO-სთვის */}
         <h1 id="about-velmia-title" className={styles.title}>
-          About Velmia – Handmade Notebooks & Journals
+          About Velmia – Handmade Journals & Journaling Experiences
         </h1>
 
         {/* დეტალური აღწერა საკვანძო სიტყვებით */}
         <p className={styles.text}>
-          Velmia is your trusted source for curated design, thoughtful content,
-          and impactful digital experiences. We specialize in premium{" "}
-          <strong>handmade notebooks</strong>, <strong>journals</strong>, and{" "}
-          <strong>planners</strong> crafted with care and passion. Whether you
-          are a writer, creator, or dreamer, Velmia’s products blend creativity
-          with functionality — perfect for your daily journaling, self-care
-          routines, or meaningful gifts.
+          Velmia is your trusted destination for thoughtfully designed, premium
+          <strong> handmade notebooks</strong>, <strong>journals</strong>, and
+          <strong> planners</strong>. Each piece combines creativity, style, and
+          function, crafted to inspire your writing, self-reflection, and daily
+          planning. Whether you're journaling, planning, or giving a meaningful
+          gift, Velmia notebooks make every page a moment of joy.
         </p>
 
         <h2 className={styles.subtitle}>Why Choose Velmia?</h2>
         <p className={styles.text}>
-          Velmia offers a curated selection of premium, handmade notebooks and
-          journals designed for writers, creators, and dreamers. Each piece is
-          made with attention to detail and high-quality materials. Whether
-          you're journaling daily, sketching ideas, or looking for a thoughtful
-          gift, Velmia notebooks bring beauty and purpose to your writing
-          journey. Enjoy fast worldwide shipping and a seamless online shopping
-          experience.
+          Our curated selection emphasizes high-quality materials, elegant
+          design, and attention to detail. Velmia notebooks and journals
+          encourage personal growth, mindfulness, and creative exploration.
+          Perfect for writers, dreamers, and creators alike, each product helps
+          transform everyday journaling into an inspiring, purposeful
+          experience. Fast worldwide shipping ensures your favorite journals
+          reach you quickly.
         </p>
 
         {/* სოციალური ლინკები – aria-label დამატებული */}
