@@ -11,7 +11,10 @@ export default function ContactForm() {
     message: "",
   });
 
-  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [status, setStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,20 +38,28 @@ export default function ContactForm() {
         setFormData({ name: "", email: "", message: "" });
       })
       .catch((error) => {
-        setStatus({ type: "error", message: "An error occurred. Please try again." });
+        setStatus({
+          type: "error",
+          message: "An error occurred. Please try again.",
+        });
         console.error("Email send error:", error);
       });
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit} noValidate aria-label="Contact form">
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      noValidate
+      aria-label="Contact form"
+    >
       <h2 className={styles.formTitle}>
         Looking for a Custom Journal Designed Just for You?
       </h2>
       <p className={styles.formSubtitle}>
-        Let’s bring your ideas to life. Whether you need a personalized notebook,
-        a self-care planner — I’ll design it to match your style and goals. Message me now and
-        let’s create something beautiful together!
+        Let’s bring your ideas to life. Whether you need a personalized
+        notebook, a self-care planner — I’ll design it to match your style and
+        goals. Message me now and let’s create something beautiful together!
       </p>
 
       <label htmlFor="name" className={styles.label}>

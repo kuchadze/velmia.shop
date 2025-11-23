@@ -15,10 +15,6 @@ const categories = [
   { label: "All Journals & eBooks", value: "all" },
   { label: "Self-Care Journals", value: "selfcare" },
   { label: "Self-Help eBooks", value: "ebook-self-care" },
-  { label: "Shadow Work Journals", value: "shadow-work" },
-  { label: "ADHD & Productivity Planners", value: "adhd-planner" },
-  { label: "Gratitude Journals", value: "gratitude" },
-  { label: "Mindset & Motivation", value: "mindset" },
   { label: "Budget & Finance Planners", value: "budgetplanner" },
   { label: "Hobby Journals", value: "notebook" },
   { label: "Travel Journals", value: "traveljournal" },
@@ -145,7 +141,7 @@ const HomeContainer = () => {
           {/* Show More Button */}
           {visibleCount < allCards.length && (
   <button onClick={handleShowMore} className={styles.showMoreButton}>
-    ✨ Discover More Journals & eBooks ✨
+    Discover More Journals & eBooks
   </button>
 )}
 </>
