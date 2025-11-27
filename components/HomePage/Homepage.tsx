@@ -131,7 +131,7 @@ const HomeContainer = () => {
                     rel="noopener noreferrer"
                     className={styles.buyButton}
                   >
-                    View / Download
+                    View & Buy
                   </a>
                 </article>
               </div>
